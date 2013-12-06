@@ -1,0 +1,21 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <div class="col_4">
+    {% if error is not empty %}
+        <div class="notice error">
+            {{ error }}
+        </div>
+    {% endif %}
+    <form action="{{ path('login') }}" method="POST" class="vertical">
+
+        <label for="_username">login</label>
+        <input type="text" name="_username" value="{{ last_username }}">
+
+        <label for="_password">password</label>
+        <input type="password" name="_password">
+
+        <button type="submit" class="">sign in</button>
+    </form>
+    </div>
+{% endblock %}
